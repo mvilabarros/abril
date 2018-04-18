@@ -24,7 +24,7 @@ namespace _2_2
 
         private void btnClick(Object sender, EventArgs e)
         {
-            if (txt_number.Text.Length < 9)
+            if (txt_number.Text.Length < 35)
             {
                 this.Controls["txt_number"].Text += (sender as Button).Text;
             }
@@ -35,7 +35,7 @@ namespace _2_2
         {
             if ((sender as Button).BackColor != Color.Red)
             {
-                (sender as Button).BackColor = SystemColors.ButtonHighlight;
+                (sender as Button).BackColor = Color.GreenYellow;
             }
         }
 

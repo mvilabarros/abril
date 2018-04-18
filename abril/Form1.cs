@@ -19,7 +19,7 @@ namespace abril
         public Form1()
         {
             InitializeComponent();
-            lbl1.Text = "Lista principal: 0";
+            lbl1.Text = "Lista principal: " + list1.Items.Count;
             lbl2.Text = "Índices seleccionados: ";
 
             this.Text = "Title...";
@@ -61,6 +61,7 @@ namespace abril
                 list1.Items.Remove(list1.SelectedItems[0]);
                 cont++;
             }
+            lbl1.Text = "Lista principal: " + list1.Items.Count;
 
         }
 
@@ -73,6 +74,8 @@ namespace abril
                 list2.Items.Remove(list2.SelectedItems[0]);
                 cont++;
             }
+            lbl1.Text = "Lista principal: " + list1.Items.Count;
+
         }
 
         private void list1_SelectedIndexChanged(object sender, EventArgs e)
