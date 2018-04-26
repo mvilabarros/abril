@@ -19,6 +19,10 @@ namespace abril
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             lbl1.Text = "Lista principal: " + list1.Items.Count;
             lbl2.Text = "Índices seleccionados: ";
 
@@ -32,7 +36,7 @@ namespace abril
             toolTip1.SetToolTip(this.btn_move1, "Mueve ítem de lista principal a secundaria.");
             toolTip1.SetToolTip(this.btn_move2, "Mueve ítem de lista secundaria a principal.");
             toolTip1.SetToolTip(this.txt, "Escribe nombre ítem.");
-
+            timer1.Start();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -47,7 +51,7 @@ namespace abril
         {
             while(list1.SelectedItems.Count > 0)
             {
-                list1.Items.Remove(list1.SelectedItems[0]);
+                list1.Items.RemoveAt(list1.SelectedIndex);
                 lbl1.Text = "Lista principal: " + list1.Items.Count.ToString();
             }
         }
@@ -58,11 +62,11 @@ namespace abril
             while(list1.SelectedItems.Count > 0)
             {
                 list2.Items.Insert(cont,list1.SelectedItems[0]);
-                list1.Items.Remove(list1.SelectedItems[0]);
+                list1.Items.RemoveAt(list1.SelectedIndex);
                 cont++;
             }
             lbl1.Text = "Lista principal: " + list1.Items.Count;
-
+            toolTip1.SetToolTip(this.list2, "Ítems en lista secundaria: " + list2.Items.Count);
         }
 
         private void btn_move2_Click(object sender, EventArgs e)
@@ -71,11 +75,11 @@ namespace abril
             while (list2.SelectedItems.Count > 0)
             {
                 list1.Items.Insert(cont, list2.SelectedItems[0]);
-                list2.Items.Remove(list2.SelectedItems[0]);
+                list2.Items.RemoveAt(list2.SelectedIndex);
                 cont++;
             }
             lbl1.Text = "Lista principal: " + list1.Items.Count;
-
+            toolTip1.SetToolTip(this.list2, "Ítems en lista secundaria: " + list2.Items.Count);
         }
 
         private void list1_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,11 +115,7 @@ namespace abril
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
-
+  
       
     }
 }

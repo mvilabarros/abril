@@ -26,7 +26,7 @@ namespace _2_2
         {
             if (txt_number.Text.Length < 35)
             {
-                this.Controls["txt_number"].Text += (sender as Button).Text;
+                this.txt_number.Text += (sender as Button).Text;
             }
             (sender as Button).BackColor = Color.Red;
 
@@ -52,7 +52,7 @@ namespace _2_2
         {
             foreach (Control control in Controls)
             {
-                if (control.GetType() == typeof(Button))
+                if (control.GetType() == typeof(Button)) // control is Button 
                 {
                     Button btn = (Button)control;
                     btn.BackColor = SystemColors.ButtonFace;
@@ -68,7 +68,7 @@ namespace _2_2
 
         bool check(string var)
         {
-            return var.Equals(password);
+            return var== password;
         }
 
         private void Form1_Load(object sender, EventArgs e)
