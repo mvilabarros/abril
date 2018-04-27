@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblPalabra = new System.Windows.Forms.Label();
             this.txt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn = new System.Windows.Forms.Button();
-            this.dibujoAhorcado1 = new ClassLibrary2.DibujoAhorcado();
             this.lblLetra = new System.Windows.Forms.Label();
+            this.dibujoAhorcado1 = new ClassLibrary2.DibujoAhorcado();
             this.SuspendLayout();
             // 
             // lblPalabra
@@ -49,7 +50,7 @@
             // 
             this.txt.Location = new System.Drawing.Point(132, 327);
             this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(44, 20);
+            this.txt.Size = new System.Drawing.Size(30, 20);
             this.txt.TabIndex = 2;
             // 
             // label3
@@ -63,13 +64,21 @@
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(182, 326);
+            this.btn.Location = new System.Drawing.Point(180, 325);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(75, 23);
             this.btn.TabIndex = 5;
             this.btn.Text = "ENVIAR";
             this.btn.UseVisualStyleBackColor = true;
             this.btn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblLetra
+            // 
+            this.lblLetra.AutoSize = true;
+            this.lblLetra.Location = new System.Drawing.Point(200, 289);
+            this.lblLetra.Name = "lblLetra";
+            this.lblLetra.Size = new System.Drawing.Size(0, 13);
+            this.lblLetra.TabIndex = 6;
             // 
             // dibujoAhorcado1
             // 
@@ -80,14 +89,7 @@
             this.dibujoAhorcado1.TabIndex = 0;
             this.dibujoAhorcado1.Text = "dibujoAhorcado1";
             this.dibujoAhorcado1.CambiaError += new ClassLibrary2.DibujoAhorcado.EventHandler(this.dibujoAhorcado1_CambiaError);
-            // 
-            // lblLetra
-            // 
-            this.lblLetra.AutoSize = true;
-            this.lblLetra.Location = new System.Drawing.Point(200, 289);
-            this.lblLetra.Name = "lblLetra";
-            this.lblLetra.Size = new System.Drawing.Size(0, 13);
-            this.lblLetra.TabIndex = 6;
+            this.dibujoAhorcado1.Ahorcado += new ClassLibrary2.DibujoAhorcado.EventHandler(this.dibujoAhorcado1_Ahorcado);
             // 
             // Form1
             // 
@@ -100,8 +102,12 @@
             this.Controls.Add(this.txt);
             this.Controls.Add(this.lblPalabra);
             this.Controls.Add(this.dibujoAhorcado1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "The Hangman Mario";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

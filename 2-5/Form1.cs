@@ -17,28 +17,30 @@ namespace _2_5
             InitializeComponent();
         }
 
-        static Random random = new Random((int)DateTime.Now.Ticks);
+        static Random random;
         static string[] palabras = { "Bowser", "Peach", "Luigi", "Mario", "Toad" };
-        static string comprueba = palabras[random.Next(0, palabras.Length)];
-        static string compruebaMayus = comprueba.ToUpper();
+        static string comprueba;
+        static string compruebaMayus;
+        static int aciertos = 0;
+
+        StringBuilder mostrar;
 
         private void Comprueba()
         {
-            string mayus = txt.Text.ToUpper();
-            char comp = mayus[0];
-            int aciertos = 0;
+            string mayus = null;
+            char comp = '\0' ;
             bool ganar = false;
 
-            StringBuilder mostrar = new StringBuilder(comprueba.Length);
-            for(int i = 0; i < comprueba.Length; i++)
+            if (txt.Text.Length != 0)
             {
-                mostrar.Append('_');
+                mayus = txt.Text.ToUpper();
+                comp = mayus[0];
             }
 
             List<char> correctos = new List<char>();
             List<char> errores = new List<char>();
 
-            if (compruebaMayus.Contains(comp))
+            if (compruebaMayus.Contains(comp) && comp != '\0')
             {
                 correctos.Add(comp);
                 for(int i = 0; i < comprueba.Length; i++)
@@ -49,7 +51,6 @@ namespace _2_5
                         aciertos++;
                     }
                 }
-                if (aciertos == comprueba.Length) ganar = true;
                 lblLetra.Text = "ACIERTO";
             }
             else
@@ -58,14 +59,30 @@ namespace _2_5
                 lblLetra.Text = "FALLO";
                 dibujoAhorcado1.Errores += 1;
             }
-
             lblPalabra.Text = "Palabra: " + mostrar.ToString();
-            string cambiarMostrar = "";
-            for(int i = 1; i < comprueba.Length; i++)
-            {
 
+            if (aciertos == comprueba.Length) ganar = true;
+            if (ganar)
+            {
+                MessageBox.Show("¡HAS GANADO!", "~~~~", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Cargar();
             }
-            //if ganar
+        }
+
+        private void Cargar()
+        {
+            aciertos = 0;
+            dibujoAhorcado1.Errores = 0;
+            random = new Random((int)DateTime.Now.Ticks);
+            comprueba = palabras[random.Next(0, palabras.Length)];
+            compruebaMayus = comprueba.ToUpper();
+            mostrar = new StringBuilder(comprueba.Length);
+
+            for (int i = 0; i < comprueba.Length; i++)
+            {
+                mostrar.Append('_');
+            }
+            lblPalabra.Text = "Palabra: " + mostrar.ToString();
         }
 
         private void dibujoAhorcado1_CambiaError(object ahorcado, EventArgs eve)
@@ -75,13 +92,20 @@ namespace _2_5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // dibujoAhorcado1.Errores = Convert.ToInt32(txt.Text);
             if(txt.Text.Length != 0) Comprueba();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dibujoAhorcado1.Errores = 0;
+            Cargar();
+        }
+
+        private void dibujoAhorcado1_Ahorcado(object ahorcado, EventArgs eve)
+        {
+         
+            MessageBox.Show("¡HAS PERDIDO!", "~~~~", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            Cargar();
+            
         }
     }
 }
