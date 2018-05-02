@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A5ADD9EE-744C-4C37-A44E-9F592D007E2B}</ProjectGuid>
+    <ProjectGuid>{64572D53-AA64-48BF-A6D1-7AFFAAE9577D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_2_5</RootNamespace>
-    <AssemblyName>2-5</AssemblyName>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -64,7 +64,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,15 +79,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gboy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cUDKrl3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary2\ClassLibrary2\Librería.csproj">
+    <ProjectReference Include="..\ClassLibrary2\ClassLibrary2.csproj">
       <Project>{721B99A8-75CA-4246-9F20-FC36F33534D3}</Project>
-      <Name>Librería</Name>
+      <Name>ClassLibrary2</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A5ADD9EE-744C-4C37-A44E-9F592D007E2B}</ProjectGuid>
+    <ProjectGuid>{164A6B42-C554-4C40-8E67-1165BB380E69}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_2_5</RootNamespace>
-    <AssemblyName>2-5</AssemblyName>
+    <RootNamespace>BlocNotas</RootNamespace>
+    <AssemblyName>BlocNotas</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -80,16 +81,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gboy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cUDKrl3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary2\ClassLibrary2\Librería.csproj">
+    <ProjectReference Include="..\..\..\ClassLibrary2\ClassLibrary2\Librería.csproj">
       <Project>{721B99A8-75CA-4246-9F20-FC36F33534D3}</Project>
       <Name>Librería</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -83,11 +83,11 @@
             // dibujoAhorcado1
             // 
             this.dibujoAhorcado1.Errores = 6;
-            this.dibujoAhorcado1.Location = new System.Drawing.Point(14, 12);
+            this.dibujoAhorcado1.Location = new System.Drawing.Point(27, 12);
             this.dibujoAhorcado1.Name = "dibujoAhorcado1";
-            this.dibujoAhorcado1.Size = new System.Drawing.Size(271, 262);
-            this.dibujoAhorcado1.TabIndex = 0;
-            this.dibujoAhorcado1.Text = "dibujoAhorcado1";
+            this.dibujoAhorcado1.Size = new System.Drawing.Size(255, 270);
+            this.dibujoAhorcado1.TabIndex = 7;
+            this.dibujoAhorcado1.Text = "dibujoAhorcado";
             this.dibujoAhorcado1.CambiaError += new ClassLibrary2.DibujoAhorcado.EventHandler(this.dibujoAhorcado1_CambiaError);
             this.dibujoAhorcado1.Ahorcado += new ClassLibrary2.DibujoAhorcado.EventHandler(this.dibujoAhorcado1_Ahorcado);
             // 
@@ -96,12 +96,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(297, 393);
+            this.Controls.Add(this.dibujoAhorcado1);
             this.Controls.Add(this.lblLetra);
             this.Controls.Add(this.btn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt);
             this.Controls.Add(this.lblPalabra);
-            this.Controls.Add(this.dibujoAhorcado1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -116,12 +116,12 @@
 
         #endregion
 
-        private ClassLibrary2.DibujoAhorcado dibujoAhorcado1;
         private System.Windows.Forms.Label lblPalabra;
         private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Label lblLetra;
+        private ClassLibrary2.DibujoAhorcado dibujoAhorcado1;
     }
 }
 
